@@ -42,12 +42,20 @@ class UnifiedMessageListModel : public QMailMessageListModel
     // searchServer() is running, or has run for this search.
     Q_PROPERTY(bool searchingServer READ searchingServer NOTIFY serverSearchChanged)
     Q_PROPERTY(bool serverSearched READ serverSearched NOTIFY serverSearchChanged)
+    // How the rows are ordered: newest first, by sender, or largest first (the size of the whole
+    // mail, which attachments make up most of). Within that, newest first.
+    Q_PROPERTY(SortOrder sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
+    // Starred rows above the rest, each part in sortOrder.
+    Q_PROPERTY(bool starredFirst READ starredFirst WRITE setStarredFirst NOTIFY starredFirstChanged)
     Q_PROPERTY(int count READ count NOTIFY countChanged)
     // For the virtual Starred folder's count. Notifies on any change of the messages.
     Q_PROPERTY(int unreadCount READ unreadCount NOTIFY unreadCountChanged)
     Q_PROPERTY(int selectedMessageCount READ selectedMessageCount NOTIFY selectedMessageCountChanged)
 
 public:
+    enum SortOrder { ByDate, BySender, BySize };
+    Q_ENUM(SortOrder)
+
     enum Roles {
         IdRole = QMailMessageModelBase::MessageIdRole + 1,
         SenderDisplayNameRole,
@@ -64,7 +72,11 @@ public:
         ThreadIdRole,
         // Messages in the row's conversation, in any folder.
         ThreadCountRole,
-        SelectedRole
+        SelectedRole,
+        // The list's sections, which follow sortOrder: "starred" for the starred rows on top with
+        // starredFirst, otherwise the day (as "yyyy-MM-dd") by date, the sender by sender, and
+        // nothing by size.
+        SortSectionRole
     };
 
     explicit UnifiedMessageListModel(QObject *parent = nullptr);
@@ -82,6 +94,10 @@ public:
     void setThreaded(bool threaded);
     QVariantList hiddenIds() const { return m_hiddenIds; }
     void setHiddenIds(const QVariantList &ids);
+    SortOrder sortOrder() const { return m_sortOrder; }
+    void setSortOrder(SortOrder order);
+    bool starredFirst() const { return m_starredFirst; }
+    void setStarredFirst(bool first);
     QVariantMap search() const { return m_search; }
     void setSearch(const QVariantMap &search);
     bool searchingBodies() const { return !m_bodySearch.isNull(); }
@@ -115,6 +131,8 @@ signals:
     void threadedChanged();
     void hiddenIdsChanged();
     void searchChanged();
+    void sortOrderChanged();
+    void starredFirstChanged();
     void searchingBodiesChanged();
     void serverSearchChanged();
     void countChanged();
@@ -127,6 +145,7 @@ protected:
 private:
     void onMessagesRemoved(const QMailMessageIdList &ids);
     void updateKey();
+    void updateSortKey();
     // force: set the key even when the rows are the same, as after the folders changed.
     void regroup(bool force = false);
     void onStoreChanged();
@@ -140,6 +159,8 @@ private:
     bool m_unreadOnly = false;
     QVariantList m_hiddenIds;
     bool m_threaded = false;
+    SortOrder m_sortOrder = ByDate;
+    bool m_starredFirst = false;
     // With threaded: the messages grouped, each row's messages, the unread ones among them, and
     // the rows' conversations' sizes.
     QMailMessageKey m_threadedKey;

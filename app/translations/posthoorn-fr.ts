@@ -591,17 +591,32 @@
     <name>MessagesPage</name>
     <message>
         <location filename="../qml/pages/MessagesPage.qml" line="+13"/>
-        <location line="+348"/>
+        <location line="+396"/>
         <source>Search</source>
         <translation>Rechercher</translation>
     </message>
     <message>
-        <location line="-181"/>
+        <location line="-226"/>
         <source>Folders</source>
         <translation>Dossiers</translation>
     </message>
+    <message>
+        <location line="+55"/>
+        <source>Date</source>
+        <translation>Date</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Sender</source>
+        <translation>Expéditeur</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Size</source>
+        <translation>Taille</translation>
+    </message>
     <message numerus="yes">
-        <location line="+49"/>
+        <location line="+27"/>
         <source>%n selected</source>
         <translation>
             <numerusform>%n sélectionné</numerusform>
@@ -648,11 +663,12 @@
     </message>
     <message>
         <location line="+6"/>
+        <location line="+143"/>
         <source>Starred</source>
         <translation>Avec étoile</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-137"/>
         <source>With attachments</source>
         <translation>Avec pièces jointes</translation>
     </message>
@@ -687,7 +703,20 @@
         <translation>Terminé</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+6"/>
+        <source>Mark all as read</source>
+        <translation>Tout marquer comme lu</translation>
+    </message>
+    <message numerus="yes">
+        <location line="+3"/>
+        <source>Marking %n message(s) as read</source>
+        <translation>
+            <numerusform>Marquage de %n message comme lu</numerusform>
+            <numerusform>Marquage de %n messages comme lus</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location line="+14"/>
         <source>Remove from favourites</source>
         <translation>Retirer des favoris</translation>
     </message>
@@ -777,7 +806,7 @@
         <translation>Tirez vers le bas pour synchroniser</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+59"/>
         <source>until %1</source>
         <extracomment>In the Snoozed folder: when a mail comes back. %1 is a date and time.</extracomment>
         <translation>jusqu&apos;au %1</translation>
@@ -838,7 +867,7 @@
         <translation>Supprimer</translation>
     </message>
     <message numerus="yes">
-        <location line="+131"/>
+        <location line="+139"/>
         <source>Deleting %n message(s)</source>
         <translation>
             <numerusform>Suppression de %n message</numerusform>
@@ -1229,6 +1258,16 @@
     </message>
     <message>
         <location line="+4"/>
+        <source>Starred mail first</source>
+        <translation>Messages avec étoile en tête</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Above the rest of the list, in the same order</source>
+        <translation>Au-dessus du reste de la liste, dans le même ordre</translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Conversations</source>
         <translation>Conversations</translation>
     </message>
@@ -1509,6 +1548,34 @@
         <location line="+39"/>
         <source>Pick a date and time…</source>
         <translation>Choisir une date et une heure…</translation>
+    </message>
+</context>
+<context>
+    <name>SortPage</name>
+    <message>
+        <location filename="../qml/pages/SortPage.qml" line="+12"/>
+        <source>By date, newest first</source>
+        <translation>Par date, les plus récents d&apos;abord</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>By sender</source>
+        <translation>Par expéditeur</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>By size, largest first</source>
+        <translation>Par taille, les plus lourds d&apos;abord</translation>
+    </message>
+    <message>
+        <location line="+12"/>
+        <source>Order</source>
+        <translation>Tri</translation>
+    </message>
+    <message>
+        <location line="+38"/>
+        <source>For all lists. By size, it&apos;s the size of the whole mail, mostly its attachments.</source>
+        <translation>Pour toutes les listes. Par taille, c&apos;est le poids du message entier, surtout celui de ses pièces jointes.</translation>
     </message>
 </context>
 <context>

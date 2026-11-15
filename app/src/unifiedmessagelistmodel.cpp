@@ -12,7 +12,7 @@
 UnifiedMessageListModel::UnifiedMessageListModel(QObject *parent)
     : QMailMessageListModel(parent)
 {
-    setSortKey(QMailMessageSortKey::timeStamp(Qt::DescendingOrder));
+    updateSortKey();
 
     connect(this, &QAbstractItemModel::rowsInserted, this, &UnifiedMessageListModel::countChanged);
     connect(this, &QAbstractItemModel::rowsRemoved, this, &UnifiedMessageListModel::countChanged);
@@ -61,6 +61,7 @@ QHash<int, QByteArray> UnifiedMessageListModel::roleNames() const
     roles.insert(StarredRole, "starred");
     roles.insert(ThreadIdRole, "threadId");
     roles.insert(ThreadCountRole, "threadCount");
+    roles.insert(SortSectionRole, "sortSection");
     roles.insert(SelectedRole, "selected");
     return roles;
 }
@@ -81,6 +82,37 @@ void UnifiedMessageListModel::setUnreadOnly(bool unreadOnly)
     m_unreadOnly = unreadOnly;
     updateKey();
     emit unreadOnlyChanged();
+}
+
+void UnifiedMessageListModel::setSortOrder(SortOrder order)
+{
+    if (order == m_sortOrder)
+        return;
+    m_sortOrder = order;
+    updateSortKey();
+    emit sortOrderChanged();
+}
+
+void UnifiedMessageListModel::setStarredFirst(bool first)
+{
+    if (first == m_starredFirst)
+        return;
+    m_starredFirst = first;
+    updateSortKey();
+    emit starredFirstChanged();
+}
+
+void UnifiedMessageListModel::updateSortKey()
+{
+    QMailMessageSortKey key;
+    if (m_starredFirst)
+        key = QMailMessageSortKey::status(QMailMessage::Important, Qt::DescendingOrder);
+    if (m_sortOrder == BySender)
+        key = key & QMailMessageSortKey::sender(Qt::AscendingOrder);
+    else if (m_sortOrder == BySize)
+        key = key & QMailMessageSortKey::size(Qt::DescendingOrder);
+    key = key & QMailMessageSortKey::timeStamp(Qt::DescendingOrder);
+    setSortKey(key);
 }
 
 void UnifiedMessageListModel::setThreaded(bool threaded)
@@ -331,6 +363,18 @@ QVariant UnifiedMessageListModel::data(const QMailMessageMetaData &metaData, int
         return metaData.date().toLocalTime();
     case TimeSectionRole:
         return metaData.date().toLocalTime().date();
+    case SortSectionRole:
+        if (m_starredFirst && (metaData.status() & QMailMessage::Important))
+            return QStringLiteral("starred");
+        switch (m_sortOrder) {
+        case ByDate:
+            return metaData.date().toLocalTime().date().toString(Qt::ISODate);
+        case BySender:
+            return metaData.from().name().isEmpty() ? metaData.from().address() : metaData.from().name();
+        case BySize:
+            break;
+        }
+        return QString();
     case ReadStatusRole:
         if (m_members.contains(metaData.id())) {
             for (const QMailMessageId &id : m_members.value(metaData.id())) {

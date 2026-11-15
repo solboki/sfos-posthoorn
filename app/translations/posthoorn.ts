@@ -590,17 +590,32 @@
     <name>MessagesPage</name>
     <message>
         <location filename="../qml/pages/MessagesPage.qml" line="+13"/>
-        <location line="+348"/>
+        <location line="+396"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-181"/>
+        <location line="-226"/>
         <source>Folders</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location line="+55"/>
+        <source>Date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Sender</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message numerus="yes">
-        <location line="+49"/>
+        <location line="+27"/>
         <source>%n selected</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -645,11 +660,12 @@
     </message>
     <message>
         <location line="+6"/>
+        <location line="+143"/>
         <source>Starred</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-137"/>
         <source>With attachments</source>
         <translation type="unfinished"></translation>
     </message>
@@ -684,7 +700,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+6"/>
+        <source>Mark all as read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location line="+3"/>
+        <source>Marking %n message(s) as read</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <location line="+14"/>
         <source>Remove from favourites</source>
         <translation type="unfinished"></translation>
     </message>
@@ -774,7 +802,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+59"/>
         <source>until %1</source>
         <extracomment>In the Snoozed folder: when a mail comes back. %1 is a date and time.</extracomment>
         <translation type="unfinished"></translation>
@@ -835,7 +863,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location line="+131"/>
+        <location line="+139"/>
         <source>Deleting %n message(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -1224,6 +1252,16 @@
     </message>
     <message>
         <location line="+4"/>
+        <source>Starred mail first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Above the rest of the list, in the same order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Conversations</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1499,6 +1537,34 @@
     <message>
         <location line="+39"/>
         <source>Pick a date and time…</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SortPage</name>
+    <message>
+        <location filename="../qml/pages/SortPage.qml" line="+12"/>
+        <source>By date, newest first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>By sender</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>By size, largest first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+38"/>
+        <source>For all lists. By size, it&apos;s the size of the whole mail, mostly its attachments.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

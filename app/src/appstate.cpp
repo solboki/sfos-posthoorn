@@ -25,8 +25,31 @@ AppState::AppState(QObject *parent)
     m_conversations = m_settings.value(QStringLiteral("lists/conversations"), true).toBool();
     m_signByDefault = m_settings.value(QStringLiteral("pgp/signByDefault"), true).toBool();
     m_attachPublicKey = m_settings.value(QStringLiteral("pgp/attachPublicKey"), false).toBool();
+    m_sortOrder = qBound(0, m_settings.value(QStringLiteral("lists/sortOrder"), 0).toInt(), 2);
+    m_starredFirst = m_settings.value(QStringLiteral("lists/starredFirst"), false).toBool();
     m_mutedAccounts = m_settings.value(QStringLiteral("notifications/mutedAccounts")).toStringList();
     m_mutedAccounts.removeAll(QString());
+}
+
+void AppState::setSortOrder(int order)
+{
+    order = qBound(0, order, 2);
+    if (order == m_sortOrder)
+        return;
+    m_sortOrder = order;
+    m_settings.setValue(QStringLiteral("lists/sortOrder"), order);
+    m_settings.sync();
+    emit sortOrderChanged();
+}
+
+void AppState::setStarredFirst(bool first)
+{
+    if (first == m_starredFirst)
+        return;
+    m_starredFirst = first;
+    m_settings.setValue(QStringLiteral("lists/starredFirst"), first);
+    m_settings.sync();
+    emit starredFirstChanged();
 }
 
 bool AppState::notifyFilterInstalled() const

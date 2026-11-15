@@ -24,6 +24,13 @@ Page {
             }
 
             TextSwitch {
+                text: qsTr("Starred mail first")
+                description: qsTr("Above the rest of the list, in the same order")
+                checked: AppState.starredFirst
+                onCheckedChanged: AppState.starredFirst = checked
+            }
+
+            TextSwitch {
                 text: qsTr("Conversations")
                 description: qsTr("A mail and its replies as one row, opening into all of them")
                 checked: AppState.conversations
