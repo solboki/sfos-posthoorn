@@ -591,7 +591,7 @@
     <name>MessagesPage</name>
     <message>
         <location filename="../qml/pages/MessagesPage.qml" line="+13"/>
-        <location line="+396"/>
+        <location line="+397"/>
         <source>Search</source>
         <translation>Rechercher</translation>
     </message>
@@ -614,6 +614,11 @@
         <location line="+0"/>
         <source>Size</source>
         <translation>Taille</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Oldest</source>
+        <translation>Anciens</translation>
     </message>
     <message numerus="yes">
         <location line="+27"/>
@@ -658,11 +663,12 @@
     </message>
     <message>
         <location line="+6"/>
+        <location line="+151"/>
         <source>Unread</source>
         <translation>Non lus</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-145"/>
         <location line="+143"/>
         <source>Starred</source>
         <translation>Avec étoile</translation>
@@ -806,7 +812,7 @@
         <translation>Tirez vers le bas pour synchroniser</translation>
     </message>
     <message>
-        <location line="+59"/>
+        <location line="+62"/>
         <source>until %1</source>
         <extracomment>In the Snoozed folder: when a mail comes back. %1 is a date and time.</extracomment>
         <translation>jusqu&apos;au %1</translation>
@@ -1559,6 +1565,11 @@
     </message>
     <message>
         <location line="+1"/>
+        <source>By date, oldest first</source>
+        <translation>Par date, les plus anciens d&apos;abord</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>By sender</source>
         <translation>Par expéditeur</translation>
     </message>
@@ -1573,7 +1584,17 @@
         <translation>Tri</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+31"/>
+        <source>Unread mail first</source>
+        <translation>Non lus d&apos;abord</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Above the read mail, in the order above. Starred mail stays on top when it&apos;s put first in Settings.</source>
+        <translation>Au-dessus des messages lus, dans l&apos;ordre choisi ci-dessus. Les messages avec étoile restent en tête s&apos;ils sont placés en premier dans les Réglages.</translation>
+    </message>
+    <message>
+        <location line="+14"/>
         <source>For all lists. By size, it&apos;s the size of the whole mail, mostly its attachments.</source>
         <translation>Pour toutes les listes. Par taille, c&apos;est le poids du message entier, surtout celui de ses pièces jointes.</translation>
     </message>

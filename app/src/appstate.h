@@ -31,11 +31,13 @@ class AppState : public QObject
     Q_PROPERTY(bool signByDefault READ signByDefault WRITE setSignByDefault NOTIFY signByDefaultChanged)
     // Signed mail carries one's public key as an attachment; off unless switched on.
     Q_PROPERTY(bool attachPublicKey READ attachPublicKey WRITE setAttachPublicKey NOTIFY attachPublicKeyChanged)
-    // How message lists are ordered: 0 newest first, 1 by sender, 2 largest first (see
-    // UnifiedMessageListModel::SortOrder).
+    // How message lists are ordered: 0 newest first, 1 by sender, 2 largest first, 3 oldest first
+    // (see UnifiedMessageListModel::SortOrder).
     Q_PROPERTY(int sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
     // Starred mail at the top of message lists; off unless switched on.
     Q_PROPERTY(bool starredFirst READ starredFirst WRITE setStarredFirst NOTIFY starredFirstChanged)
+    // Unread mail at the top of message lists (below starred mail with starredFirst).
+    Q_PROPERTY(bool unreadFirst READ unreadFirst WRITE setUnreadFirst NOTIFY unreadFirstChanged)
     // Accounts whose new mail is announced by no notification, as account ids. The messageserver
     // reads them too, with the posthoorn-notify-filter plugin (notifyfilter/).
     Q_PROPERTY(QStringList mutedAccounts READ mutedAccounts NOTIFY mutedAccountsChanged)
@@ -64,6 +66,8 @@ public:
     void setSortOrder(int order);
     bool starredFirst() const { return m_starredFirst; }
     void setStarredFirst(bool first);
+    bool unreadFirst() const { return m_unreadFirst; }
+    void setUnreadFirst(bool first);
     QStringList mutedAccounts() const { return m_mutedAccounts; }
     bool notifyFilterInstalled() const;
 
@@ -85,6 +89,7 @@ signals:
     void attachPublicKeyChanged();
     void sortOrderChanged();
     void starredFirstChanged();
+    void unreadFirstChanged();
     void mutedAccountsChanged();
 
 private:
@@ -100,6 +105,7 @@ private:
     bool m_attachPublicKey = false;
     int m_sortOrder = 0;
     bool m_starredFirst = false;
+    bool m_unreadFirst = false;
     QStringList m_mutedAccounts;
 };
 

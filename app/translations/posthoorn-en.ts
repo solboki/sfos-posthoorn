@@ -591,7 +591,7 @@
     <name>MessagesPage</name>
     <message>
         <location filename="../qml/pages/MessagesPage.qml" line="+13"/>
-        <location line="+396"/>
+        <location line="+397"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
@@ -613,6 +613,11 @@
     <message>
         <location line="+0"/>
         <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Oldest</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
@@ -658,11 +663,12 @@
     </message>
     <message>
         <location line="+6"/>
+        <location line="+151"/>
         <source>Unread</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-145"/>
         <location line="+143"/>
         <source>Starred</source>
         <translation type="unfinished"></translation>
@@ -806,7 +812,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+59"/>
+        <location line="+62"/>
         <source>until %1</source>
         <extracomment>In the Snoozed folder: when a mail comes back. %1 is a date and time.</extracomment>
         <translation type="unfinished"></translation>
@@ -1559,6 +1565,11 @@
     </message>
     <message>
         <location line="+1"/>
+        <source>By date, oldest first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>By sender</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1573,7 +1584,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+31"/>
+        <source>Unread mail first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Above the read mail, in the order above. Starred mail stays on top when it&apos;s put first in Settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
         <source>For all lists. By size, it&apos;s the size of the whole mail, mostly its attachments.</source>
         <translation type="unfinished"></translation>
     </message>

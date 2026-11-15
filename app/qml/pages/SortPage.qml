@@ -10,6 +10,7 @@ Page {
 
     readonly property var choices: [
         { order: UnifiedMessageListModel.ByDate, text: qsTr("By date, newest first") },
+        { order: UnifiedMessageListModel.OldestFirst, text: qsTr("By date, oldest first") },
         { order: UnifiedMessageListModel.BySender, text: qsTr("By sender") },
         { order: UnifiedMessageListModel.BySize, text: qsTr("By size, largest first") }
     ]
@@ -51,6 +52,14 @@ Page {
                         truncationMode: TruncationMode.Fade
                     }
                 }
+            }
+
+            TextSwitch {
+                text: qsTr("Unread mail first")
+                description: qsTr("Above the read mail, in the order above. Starred mail stays on top "
+                                  + "when it's put first in Settings.")
+                checked: AppState.unreadFirst
+                onCheckedChanged: AppState.unreadFirst = checked
             }
 
             Item {

@@ -53,6 +53,7 @@ Page {
         // A conversation's own mail stays in the order it was written.
         sortOrder: page.conversation ? UnifiedMessageListModel.ByDate : AppState.sortOrder
         starredFirst: AppState.starredFirst && !page.conversation
+        unreadFirst: AppState.unreadFirst && !page.conversation
         // Snoozed mail is out of sight until it's time.
         hiddenIds: Snoozes.messageIds
         search: page.conversation ? { "thread": page.threadId }
@@ -235,7 +236,7 @@ Page {
                 BackgroundItem {
                     id: sortButton
 
-                    readonly property var names: [qsTr("Date"), qsTr("Sender"), qsTr("Size")]
+                    readonly property var names: [qsTr("Date"), qsTr("Sender"), qsTr("Size"), qsTr("Oldest")]
 
                     visible: !page.selecting && !page.conversation
                     // Above the page header, which spans the width.
@@ -453,12 +454,15 @@ Page {
         // Following the order: days, senders, or none by size; the starred ones on top as one.
         section {
             property: messages.sortOrder === UnifiedMessageListModel.BySize && !messages.starredFirst
-                      ? "" : "sortSection"
+                      && !messages.unreadFirst ? "" : "sortSection"
             delegate: SectionHeader {
                 text: {
                     if (section === "starred")
                         return qsTr("Starred")
-                    if (messages.sortOrder !== UnifiedMessageListModel.ByDate)
+                    if (section === "unread")
+                        return qsTr("Unread")
+                    if (messages.sortOrder !== UnifiedMessageListModel.ByDate
+                            && messages.sortOrder !== UnifiedMessageListModel.OldestFirst)
                         return section
                     // "yyyy-MM-dd", as a local date.
                     var parts = section.split("-")
