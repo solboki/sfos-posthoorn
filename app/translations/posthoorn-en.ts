@@ -607,17 +607,22 @@
     </message>
     <message>
         <location line="+0"/>
-        <source>Sender</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+0"/>
         <source>Size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Oldest</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>A → Z</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Z → A</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
@@ -1264,16 +1269,6 @@
     </message>
     <message>
         <location line="+4"/>
-        <source>Starred mail first</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Above the rest of the list, in the same order</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
         <source>Conversations</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1570,7 +1565,12 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>By sender</source>
+        <source>By sender, A to Z</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>By sender, Z to A</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1585,16 +1585,31 @@
     </message>
     <message>
         <location line="+31"/>
+        <source>First</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Starred mail first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Above the rest of the list, in the order above</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Unread mail first</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Above the read mail, in the order above. Starred mail stays on top when it&apos;s put first in Settings.</source>
+        <source>Above the read mail, in the order above, below the starred mail when that&apos;s first</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+13"/>
         <source>For all lists. By size, it&apos;s the size of the whole mail, mostly its attachments.</source>
         <translation type="unfinished"></translation>
     </message>

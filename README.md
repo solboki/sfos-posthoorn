@@ -28,8 +28,8 @@ and sending are done by the messageserver. It can be used next to Jolla's Mail, 
   where it was left.
 - Conversations: a mail and its replies as one row, opening into all of them, from any folder,
   Sent included. Can be switched off in Settings.
-- Lists newest first, by sender or largest first, chosen at the top left of a list, optionally
-  with starred mail on top (Settings); starred mail
+- Lists newest or oldest first, by sender (A to Z or Z to A) or largest first, optionally with
+  starred and unread mail on top, all chosen at the top left of a list; starred mail
   stands out with a tinted background. "Mark all as read" in the pulley of any list.
 - Per mail or conversation (long-press) or for a selection: archive, snooze, mark read or unread,
   star, move, delete. Archiving moves mail to its account's archive folder, found by name or

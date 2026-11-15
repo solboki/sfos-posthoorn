@@ -42,9 +42,9 @@ class UnifiedMessageListModel : public QMailMessageListModel
     // searchServer() is running, or has run for this search.
     Q_PROPERTY(bool searchingServer READ searchingServer NOTIFY serverSearchChanged)
     Q_PROPERTY(bool serverSearched READ serverSearched NOTIFY serverSearchChanged)
-    // How the rows are ordered: newest first, by sender, largest first (the size of the whole
-    // mail, which attachments make up most of), or oldest first. Within the first three, newest
-    // first.
+    // How the rows are ordered: newest first, by sender A to Z or Z to A, largest first (the
+    // size of the whole mail, which attachments make up most of), or oldest first. Within the
+    // others, newest first.
     Q_PROPERTY(SortOrder sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
     // Starred rows above the rest, each part in sortOrder.
     Q_PROPERTY(bool starredFirst READ starredFirst WRITE setStarredFirst NOTIFY starredFirstChanged)
@@ -57,7 +57,7 @@ class UnifiedMessageListModel : public QMailMessageListModel
 
 public:
     // Stored as numbers (AppState.sortOrder): new ones go at the end.
-    enum SortOrder { ByDate, BySender, BySize, OldestFirst };
+    enum SortOrder { ByDate, BySender, BySize, OldestFirst, BySenderDescending };
     Q_ENUM(SortOrder)
 
     enum Roles {

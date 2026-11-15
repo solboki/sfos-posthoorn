@@ -25,7 +25,7 @@ AppState::AppState(QObject *parent)
     m_conversations = m_settings.value(QStringLiteral("lists/conversations"), true).toBool();
     m_signByDefault = m_settings.value(QStringLiteral("pgp/signByDefault"), true).toBool();
     m_attachPublicKey = m_settings.value(QStringLiteral("pgp/attachPublicKey"), false).toBool();
-    m_sortOrder = qBound(0, m_settings.value(QStringLiteral("lists/sortOrder"), 0).toInt(), 3);
+    m_sortOrder = qBound(0, m_settings.value(QStringLiteral("lists/sortOrder"), 0).toInt(), 4);
     m_starredFirst = m_settings.value(QStringLiteral("lists/starredFirst"), false).toBool();
     m_unreadFirst = m_settings.value(QStringLiteral("lists/unreadFirst"), false).toBool();
     m_mutedAccounts = m_settings.value(QStringLiteral("notifications/mutedAccounts")).toStringList();
@@ -34,7 +34,7 @@ AppState::AppState(QObject *parent)
 
 void AppState::setSortOrder(int order)
 {
-    order = qBound(0, order, 3);
+    order = qBound(0, order, 4);
     if (order == m_sortOrder)
         return;
     m_sortOrder = order;

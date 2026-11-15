@@ -31,8 +31,8 @@ class AppState : public QObject
     Q_PROPERTY(bool signByDefault READ signByDefault WRITE setSignByDefault NOTIFY signByDefaultChanged)
     // Signed mail carries one's public key as an attachment; off unless switched on.
     Q_PROPERTY(bool attachPublicKey READ attachPublicKey WRITE setAttachPublicKey NOTIFY attachPublicKeyChanged)
-    // How message lists are ordered: 0 newest first, 1 by sender, 2 largest first, 3 oldest first
-    // (see UnifiedMessageListModel::SortOrder).
+    // How message lists are ordered: 0 newest first, 1 by sender A to Z, 2 largest first, 3 oldest
+    // first, 4 by sender Z to A (see UnifiedMessageListModel::SortOrder).
     Q_PROPERTY(int sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
     // Starred mail at the top of message lists; off unless switched on.
     Q_PROPERTY(bool starredFirst READ starredFirst WRITE setStarredFirst NOTIFY starredFirstChanged)

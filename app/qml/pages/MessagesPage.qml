@@ -236,13 +236,15 @@ Page {
                 BackgroundItem {
                     id: sortButton
 
-                    readonly property var names: [qsTr("Date"), qsTr("Sender"), qsTr("Size"), qsTr("Oldest")]
+                    readonly property var names: [qsTr("Date"), qsTr("A → Z"), qsTr("Size"), qsTr("Oldest"), qsTr("Z → A")]
 
                     visible: !page.selecting && !page.conversation
                     // Above the page header, which spans the width.
                     z: 1
                     x: Theme.horizontalPageMargin - Theme.paddingSmall
-                    y: pageHeader.topMargin - Theme.paddingSmall
+                    // On the line of the description (the count), below the title: clear of the
+                    // page stack's indicator at the top left.
+                    y: pageHeader.topMargin + pageHeader.titleHeight - Theme.paddingSmall
                     width: sortLabel.width + 2 * Theme.paddingSmall
                     height: sortLabel.height + 2 * Theme.paddingSmall
                     onClicked: pageStack.push(Qt.resolvedUrl("SortPage.qml"))

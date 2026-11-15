@@ -131,6 +131,8 @@ void UnifiedMessageListModel::updateSortKey()
         key = key & QMailMessageSortKey::status(QMailMessage::Read, Qt::AscendingOrder);
     if (m_sortOrder == BySender)
         key = key & QMailMessageSortKey::sender(Qt::AscendingOrder);
+    else if (m_sortOrder == BySenderDescending)
+        key = key & QMailMessageSortKey::sender(Qt::DescendingOrder);
     else if (m_sortOrder == BySize)
         key = key & QMailMessageSortKey::size(Qt::DescendingOrder);
     key = key & QMailMessageSortKey::timeStamp(m_sortOrder == OldestFirst ? Qt::AscendingOrder
@@ -421,6 +423,7 @@ QVariant UnifiedMessageListModel::data(const QMailMessageMetaData &metaData, int
         case OldestFirst:
             return metaData.date().toLocalTime().date().toString(Qt::ISODate);
         case BySender:
+        case BySenderDescending:
             return metaData.from().name().isEmpty() ? metaData.from().address() : metaData.from().name();
         case BySize:
             break;

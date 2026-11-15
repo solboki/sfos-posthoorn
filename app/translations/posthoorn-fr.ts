@@ -607,11 +607,6 @@
     </message>
     <message>
         <location line="+0"/>
-        <source>Sender</source>
-        <translation>Expéditeur</translation>
-    </message>
-    <message>
-        <location line="+0"/>
         <source>Size</source>
         <translation>Taille</translation>
     </message>
@@ -619,6 +614,16 @@
         <location line="+0"/>
         <source>Oldest</source>
         <translation>Anciens</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>A → Z</source>
+        <translation>A → Z</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Z → A</source>
+        <translation>Z → A</translation>
     </message>
     <message numerus="yes">
         <location line="+27"/>
@@ -1264,16 +1269,6 @@
     </message>
     <message>
         <location line="+4"/>
-        <source>Starred mail first</source>
-        <translation>Messages avec étoile en tête</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Above the rest of the list, in the same order</source>
-        <translation>Au-dessus du reste de la liste, dans le même ordre</translation>
-    </message>
-    <message>
-        <location line="+6"/>
         <source>Conversations</source>
         <translation>Conversations</translation>
     </message>
@@ -1570,8 +1565,13 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>By sender</source>
-        <translation>Par expéditeur</translation>
+        <source>By sender, A to Z</source>
+        <translation>Par expéditeur, de A à Z</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>By sender, Z to A</source>
+        <translation>Par expéditeur, de Z à A</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1585,16 +1585,31 @@
     </message>
     <message>
         <location line="+31"/>
+        <source>First</source>
+        <translation>En tête</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Starred mail first</source>
+        <translation>Messages avec étoile en tête</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Above the rest of the list, in the order above</source>
+        <translation>Au-dessus du reste de la liste, dans l&apos;ordre choisi ci-dessus</translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Unread mail first</source>
         <translation>Non lus d&apos;abord</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Above the read mail, in the order above. Starred mail stays on top when it&apos;s put first in Settings.</source>
-        <translation>Au-dessus des messages lus, dans l&apos;ordre choisi ci-dessus. Les messages avec étoile restent en tête s&apos;ils sont placés en premier dans les Réglages.</translation>
+        <source>Above the read mail, in the order above, below the starred mail when that&apos;s first</source>
+        <translation>Au-dessus des messages lus, dans l&apos;ordre choisi ci-dessus, sous les messages avec étoile si ceux-ci sont en tête</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+13"/>
         <source>For all lists. By size, it&apos;s the size of the whole mail, mostly its attachments.</source>
         <translation>Pour toutes les listes. Par taille, c&apos;est le poids du message entier, surtout celui de ses pièces jointes.</translation>
     </message>
